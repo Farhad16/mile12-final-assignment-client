@@ -9,7 +9,7 @@ const Navbar = () => {
     logOut().then().catch();
   };
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar  bg-opacity-30 bg-black text-white ">
       <div className="flex-1">
         <a className="btn btn-ghost text-xl">Babui Pakhir Basha </a>
       </div>
@@ -31,25 +31,22 @@ const Navbar = () => {
                 <div className="w-10 rounded-full">
                   <img
                     alt="Tailwind CSS Navbar component"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    src={user?.photoURL}
                   />
                 </div>
               </div>
               <ul
                 tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 text-black"
               >
                 <li>
-                  <a className="justify-between">Username</a>
+                  <a className="justify-between"> {user?.displayName} </a>
                 </li>
                 <li>
                   <a>Dashboard</a>
                 </li>
                 <li>
-                  <button
-                    onClick={handleLogout}
-                    className="btn btn-outline btn-secondary"
-                  >
+                  <button onClick={handleLogout} className="btn">
                     {" "}
                     Logout{" "}
                   </button>
